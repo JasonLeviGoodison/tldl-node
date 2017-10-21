@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
@@ -12,6 +12,31 @@
     "express": "~4.14.0",
     "jade": "~1.11.0",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "nodemon": "~1.12.1",
+    "@google-cloud/speech": "0.10.2",
+    "@google-cloud/storage": "1.2.1",
+    "node-record-lpcm16": "0.3.0",
+    "yargs": "8.0.2"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "1.4.17",
+    "ava": "0.21.0",
+    "proxyquire": "1.8.0",
+    "sinon": "3.2.0"
+  },
+  "cloud-repo-tools": {
+    "requiresKeyFile": true,
+    "requiresProjectId": true,
+    "product": "speech",
+    "samples": [
+      {
+        "id": "recognize",
+        "name": "Speech Recognition",
+        "file": "recognize.js",
+        "docs_link": "https://cloud.google.com/speech/docs",
+        "usage": "node recognize.js --help"
+      }
+    ]
   }
 }
