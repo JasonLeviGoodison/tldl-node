@@ -8,10 +8,12 @@
   "dependencies": {
     "@google-cloud/speech": "0.10.2",
     "@google-cloud/storage": "1.2.1",
+    "aylien_textapi": "^0.6.0",
     "body-parser": "~1.15.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "express": "^4.14.1",
+    "express-handlebars": "^3.0.0",
     "jade": "~1.11.0",
     "mongodb": "^2.2.33",
     "mongoose": "^4.12.3",
