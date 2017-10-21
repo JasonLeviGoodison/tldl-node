@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Transcript = require('../models/transcript.model');
+var AnalyseText = require('../models/analysetext.model');
 
 router.post('/', function(req, res, next) {
     const Speech = require('@google-cloud/speech');
@@ -18,7 +19,7 @@ router.post('/', function(req, res, next) {
       const audio = {
         content: req.body.audioString
       };
-    
+
       const request = {
         config: config,
         audio: audio
@@ -36,8 +37,11 @@ router.post('/', function(req, res, next) {
             console.log(`Word: ${wordInfo.word}`);
           });
         });
-        Transcript.create({timestamp: Date.now(), text: fullTranscript}, function (err, transcriptObject) {
-          if (err) return console.error(err);
+        AnalyseText(fullTranscript,function(response) {
+          console.log(response)
+          Transcript.create({timestamp: Date.now(), text: fullTranscript, summary: response.join("")}, function (err, transcriptObject) {
+            if (err) return console.error(err);
+          });
         });
       })
       .catch((err) => {
