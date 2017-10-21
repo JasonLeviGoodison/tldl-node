@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+#lecture-notes {
+  flex: 3;
+  height: 100%;
+  outline-color: blue;
+  outline-style: solid;
+  margin-right: 20px;
+}
+.lectureElement {
+  padding: 5px;
+}
+
+.page-wrapper {
+  display:flex;
+}
