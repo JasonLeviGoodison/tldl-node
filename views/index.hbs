@@ -1,11 +1,11 @@
 <div class="page-wrapper">
 
-	<div class="test">
-		<ul class="sidebar-nav">
+	<div class="sidebar">
+
 			{{#each listOfLectures}}
-			<li class="lectureElement"><a href='{{this.time_seconds}}'>{{this.timestamp}}</a></li>
+		<a href='{{this.time_seconds}}' class="button">{{this.timestamp}}</a>
 			{{/each}}
-	  </ul>
+	  
 	</div>
 	<div id="lecture-notes">
 		<p id="transcription">
